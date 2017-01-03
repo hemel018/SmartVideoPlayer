@@ -1,4 +1,4 @@
-package com.quanchi.smartvideoplayer.VideoPlayer;
+package com.quanchi.smartvideoplayer;
 
 
 import android.content.Context;
@@ -15,6 +15,6 @@ public class VideoPlayer extends RelativeLayout {
     }
 
     public void pause(){
-        
+
     }
 }

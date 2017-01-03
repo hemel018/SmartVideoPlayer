@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
 
 android {
     compileSdkVersion 25
@@ -21,6 +24,33 @@ android {
     }
 }
 
+ext {
+    bintrayRepo = 'VideoLibrary'
+    bintrayName = 'smartvideoplayer'
+
+    userOrganization = 'pathfinder'
+
+    publishedGroupId = 'com.quanchi.smartvideoplayer'
+    libraryName = 'SmartVideoPlayer'
+    artifact = 'smartvideoplayer'
+
+    libraryDescription = 'SmartVideoPlayer is an Android video library that is aimed for playing video with more features.'
+
+    siteUrl = 'https://github.com/hemel018/SmartVideoPlayer'
+    gitUrl = 'https://github.com/hemel018/SmartVideoPlayer.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'hemel018'
+    developerName = 'Rana Asif Bin Hamid'
+    developerEmail = 'hemel018@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -29,3 +59,6 @@ dependencies {
     compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
 }
+
+apply from: './install.gradle'
+apply from: './bintray.gradle'
